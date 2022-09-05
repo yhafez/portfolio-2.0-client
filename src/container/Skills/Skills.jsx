@@ -64,10 +64,12 @@ const Skills = () => {
                                 className="app__flex"
                                 style={{ backgroundColor: skill.bgColor }}
                             >
-                                <img
-                                    src={urlFor(skill.icon)}
-                                    alt={skill.name}
-                                />
+                                {urlFor(skill.icon) && (
+                                    <img
+                                        src={urlFor(skill.icon)}
+                                        alt={skill.name}
+                                    />
+                                )}
                             </div>
                             <p className="p-text">{skill.name}</p>
                         </motion.div>
@@ -114,6 +116,7 @@ const Skills = () => {
                                                 effect="solid"
                                                 arrowColor="#fff"
                                                 className="skills-tooltip"
+                                                place="bottom"
                                             >
                                                 <PortableText
                                                     content={work.desc}
